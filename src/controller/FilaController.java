@@ -22,11 +22,11 @@ public class FilaController {
 	// Método de chamado
 	public String chamado(FilaObject fila, FilaObject filaPrioritarios) throws Exception {
 		
-		// Fazer 3 chamadas prioritárias para 1 da fila não prioritária
-		numChamados++;
+		// Fazer 3 chamadas prioritárias para 1 da fila não prioritária, ou se a fila não prioritária estiver vazia
 		if ((numChamados % 4 != 0 || fila.isEmpty()) && !filaPrioritarios.isEmpty()) {
+			numChamados++;
 			Cliente clienteAtendido = remove(filaPrioritarios);
-			return ("O cliente " + clienteAtendido + " da fila prioritaria foi atendido.");
+			return ("O cliente " + clienteAtendido + " da fila prioritária foi atendido.");
 		}
 		// Se não houver prioritários, já se deve chamar dos não prioritários
 		if (!fila.isEmpty()) {

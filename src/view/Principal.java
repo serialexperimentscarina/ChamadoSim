@@ -1,7 +1,5 @@
 package view;
 
-import java.awt.HeadlessException;
-
 import javax.swing.JOptionPane;
 
 import br.com.serialexperimentscarina.filaobject.FilaObject;
